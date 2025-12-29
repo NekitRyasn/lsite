@@ -99,7 +99,6 @@
         }
 
         .message::after {
-            margin-top: 50px;
             content: '|';
             animation: blink 1s infinite;
         }
@@ -154,10 +153,82 @@
             font-size: 1.5em;
             text-align: center;
         }
+
+        @media (max-width: 768px) {
+            #countdown-screen h1 {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            #timer {
+                font-size: 2.4em;
+                letter-spacing: 5px;
+            }
+
+            #timer span {
+                min-width: 60px;
+            }
+
+            #main-content h1 {
+                margin: 20px 0 60px 25px;
+                font-size: 2.1em;
+            }
+
+            .message-container {
+                margin-bottom: 50px;
+                top: 12%;
+                margin-top: 0;
+            }
+
+            .message {
+                font-size: 1.5em;
+                margin-top: 0;
+                line-height: 1.6;
+            }
+
+            .message.visible {
+                margin-bottom: 20px;
+                margin-top: 0;
+            }
+
+            .box {
+                width: 80vw;
+                max-width: 350px;
+            }
+
+            button {
+                margin-top: 40px;
+                padding: 16px 40px;
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #countdown-screen h1 {
+                font-size: 1.7em;
+            }
+
+            #timer {
+                font-size: 2em;
+            }
+
+            #main-content h1 {
+                font-size: 1.8em;
+                margin-bottom: 50px;
+            }
+
+            .message {
+                font-size: 1.35em;
+            }
+
+            button {
+                padding: 14px 36px;
+                font-size: 1.4em;
+            }
+        }
     </style>
 </head>
 <body>
-
     <div id="countdown-screen">
         <h1>Новогодний сюрприз будет доступен через...</h1>
         <div id="timer">00 : 00 : 00 : 00</div>
@@ -180,7 +251,7 @@
     <div id="loading" style="display: none;">Загрузка сообщений...</div>
 
     <script>
-        const targetDate = new Date('2026-01-01T00:00:01').getTime();
+        const targetDate = new Date('2025-01-01T00:00:01').getTime();
 
         let messages = [];
         let currentIndex = 0;
